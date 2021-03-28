@@ -1,0 +1,45 @@
+/* 
+                              Problem Code: IMDB
+                              Chef has been searching for a good motivational movie that he can watch during his exam time.
+                              His hard disk has X GB of space remaining. His friend has N movies represented with (Si,Ri)
+                              representing (space required, IMDB rating).
+                              Help Chef choose the single best movie (highest IMDB rating) that can fit in his hard disk.
+
+                              Time 		0.74
+                              Points	100
+                              Code by Abhishek
+*/
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    Scanner sc = new Scanner(System.in);
+	    int TestCases = sc.nextInt();
+		  for(;TestCases>=1;TestCases--)
+		  {
+		  int n =sc.nextInt();
+		  int x =sc.nextInt();
+		  int arr[] = new int[n];
+		  for(int a=0;a<n;a++)
+		  {
+		      int s = sc.nextInt();
+		      int r =sc.nextInt();
+		      if(s<=x)
+		      arr[a]=r;
+		      else arr[a]=0;
+		  }
+		  int max=0;
+		  for(int a=0;a<n;a++)
+		  if(arr[a]>max)
+		  max=arr[a];
+		  System.out.println(max);
+		}
+	}
+}
